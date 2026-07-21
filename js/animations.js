@@ -144,78 +144,54 @@
   window.addEventListener('portfolio:loaded', typeConsole, { once: true });
 
   /* Animated Fractal Tree */
+  const treeCanvas=document.getElementById("heatmapCanvas");
+  if(treeCanvas){
+  const ctx=treeCanvas.getContext("2d");
+  let width,height,sway=0,last=0;
+  const MAX_DEPTH=9,colors=[],offsets=[];
+  for(let i=0;i<=MAX_DEPTH;i++)colors[i]=`hsla(${170+i*2},90%,65%,${0.25+i*0.06})`;
 
-  const treeCanvas = document.getElementById("heatmapCanvas");
+  function resize(){
+  const dpr=Math.min(window.devicePixelRatio||1,1.5);
+  width=treeCanvas.parentElement.clientWidth;
+  height=320;
+  treeCanvas.width=width*dpr;
+  treeCanvas.height=height*dpr;
+  treeCanvas.style.width=width+"px";
+  treeCanvas.style.height=height+"px";
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.shadowColor="#22e5d0";
+  }
 
-  if (treeCanvas) {
+  function drawBranch(x,y,len,angle,depth){
+  if(!depth)return;
+  const c=Math.cos(angle),s=Math.sin(angle),x2=x+c*len,y2=y+s*len;
+  ctx.beginPath();
+  ctx.moveTo(x,y);
+  ctx.lineTo(x2,y2);
+  ctx.lineWidth=depth*.9;
+  ctx.strokeStyle=colors[depth];
+  ctx.shadowBlur=depth>5?6:0;
+  ctx.stroke();
+  const next=len*.75,off=offsets[depth];
+  drawBranch(x2,y2,next,angle-.45+off,depth-1);
+  drawBranch(x2,y2,next,angle+.45+off,depth-1);
+  }
 
-      const ctx = treeCanvas.getContext("2d");
+  function animate(t){
+  requestAnimationFrame(animate);
+  if(t-last<33)return;
+  last=t;
+  for(let i=0;i<=MAX_DEPTH;i++)offsets[i]=Math.sin(sway+i*.5)*.12;
+  ctx.fillStyle="#05060a";
+  ctx.fillRect(0,0,width,height);
+  drawBranch(width/2,height-20,85,-Math.PI/2,MAX_DEPTH);
+  sway+=0.015;
+  }
 
-      let width, height;
-      let sway = 0;
-
-      function resize() {
-
-          const dpr = Math.min(window.devicePixelRatio || 1, 2);
-
-          width = treeCanvas.parentElement.clientWidth;
-          height = 320;
-
-          treeCanvas.width = width * dpr;
-          treeCanvas.height = height * dpr;
-
-          treeCanvas.style.width = width + "px";
-          treeCanvas.style.height = height + "px";
-
-          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      }
-
-      function drawBranch(x, y, len, angle, depth) {
-
-          if (depth <= 0) return;
-
-          const x2 = x + Math.cos(angle) * len;
-          const y2 = y + Math.sin(angle) * len;
-
-          ctx.beginPath();
-          ctx.moveTo(x, y);
-          ctx.lineTo(x2, y2);
-
-          ctx.lineWidth = depth * 0.9;
-
-          const hue = 170 + depth * 2;
-          const alpha = 0.25 + depth * 0.06;
-
-          ctx.strokeStyle = `hsla(${hue},90%,65%,${alpha})`;
-          ctx.shadowColor = "#22e5d0";
-          ctx.shadowBlur = 8;
-
-          ctx.stroke();
-
-          const nextLength = len * 0.75;
-          const offset = Math.sin(sway + depth * 0.5) * 0.12;
-          drawBranch(x2, y2, nextLength, angle - 0.45 + offset, depth - 1);
-          drawBranch(x2, y2, nextLength, angle + 0.45 + offset, depth - 1);
-      }
-
-      function animate() {
-
-          ctx.clearRect(0, 0, width, height);
-
-          ctx.fillStyle = "#05060a";
-          ctx.fillRect(0, 0, width, height);
-
-          drawBranch(width / 2, height - 20, 85, -Math.PI / 2, 10);
-
-          sway += 0.015;
-
-          requestAnimationFrame(animate);
-      }
-
-      resize();
-      animate();
-
-      window.addEventListener("resize", Utils.debounce(resize, 150));
+  resize();
+  animate(0);
+  window.addEventListener("resize",Utils.debounce(resize,150));
   }
   
 })();
