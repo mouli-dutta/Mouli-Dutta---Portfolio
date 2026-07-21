@@ -1,0 +1,50 @@
+/* ==========================================================================
+   RESPONSIVE — mobile-first overrides
+   ========================================================================== */
+
+@media (max-width: 1180px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 50px; }
+  .hero-console { order: -1; max-width: 520px; }
+  .about-grid, .contact-grid, .github-grid { grid-template-columns: 1fr; }
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
+  .project-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 860px) {
+  :root { --section-pad: 96px; }
+  .nav-links, .nav-actions .btn { display: none; }
+  .nav-burger { display: flex; }
+  .nav-mobile {
+    display: flex; flex-direction: column; gap: 4px;
+    position: fixed; top: 84px; left: 4vw; right: 4vw; z-index: 890;
+    background: rgba(10,10,11,0.92); backdrop-filter: blur(16px);
+    border: 1px solid var(--border-subtle); border-radius: var(--radius-m);
+    padding: 10px; max-height: 0; overflow: hidden; opacity: 0;
+    transition: max-height .4s var(--ease), opacity .3s var(--ease);
+  }
+  .nav-mobile.is-open { max-height: 480px; opacity: 1; padding: 14px; }
+  .nav-mobile a { padding: 14px 12px; font-size: 15px; border-bottom: 1px solid var(--border-subtle); }
+  .nav-mobile a:last-child { border-bottom: none; }
+
+  .hero { padding-top: 120px; }
+  .hero-title { font-size: clamp(40px, 12vw, 60px); }
+  .stat-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
+  .cert-grid { grid-template-columns: 1fr; }
+  .section-head--split { flex-direction: column; align-items: flex-start; }
+  .project-search input { width: 100%; }
+  .v-timeline { padding-left: 30px; }
+  .v-node { left: -30px; }
+  .modal-meta-grid { grid-template-columns: 1fr; }
+  .footer-inner { justify-content: center; text-align: center; }
+  .footer-divider { display: none; }
+  .back-to-top { right: 20px; top: -26px; width: 42px; height: 42px; }
+}
+
+@media (max-width: 520px) {
+  .hero-desc { font-size: 15px; }
+  .hero-actions { flex-direction: column; }
+  .btn { width: 100%; }
+  .stat-grid { grid-template-columns: 1fr; }
+  .console-body { font-size: 11px; min-height: 260px; }
+  .cmdk { padding-top: 8vh; }
+}

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mouli Dutta — Detection Engineer & AI Security Engineer</title>
+<meta name="description" content="Mouli Dutta — Detection Engineer specializing in Google Chronicle SIEM, YARA-L, MITRE ATT&CK detection engineering, Python automation and AI-assisted security operations.">
+<meta name="theme-color" content="#050505">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Mouli Dutta — Detection Engineer">
+<meta property="og:description" content="Detection Engineer building scalable detections and AI-assisted SOC workflows with Google Chronicle SIEM.">
+<meta property="og:type" content="website">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mouli Dutta — Detection Engineer">
+<meta name="twitter:description" content="Detection Engineer building scalable detections and AI-assisted SOC workflows with Google Chronicle SIEM.">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/depth3d.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="preload" href="assets/fonts/space-grotesk-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body>
+
+<!-- ================= NOISE / GRID OVERLAY ================= -->
+<div class="noise-overlay" aria-hidden="true"></div>
+<div class="grid-overlay" aria-hidden="true"></div>
+
+<!-- ================= CUSTOM CURSOR ================= -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- ================= LOADER ================= -->
+<div class="loader" id="loader" role="status" aria-label="Loading portfolio">
+  <div class="loader-inner">
+    <div class="loader-mark">
+      <span>M</span><span>D</span>
+    </div>
+    <div class="loader-track">
+      <div class="loader-bar" id="loaderBar"></div>
+    </div>
+    <div class="loader-readout">
+      <span id="loaderPct">00</span><span class="pct-sign">%</span>
+      <span class="loader-status" id="loaderStatus">initializing sensors</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= COMMAND PALETTE ================= -->
+<div class="cmdk" id="cmdk" aria-hidden="true">
+  <div class="cmdk-panel" role="dialog" aria-label="Command palette">
+    <div class="cmdk-input-row">
+      <span class="cmdk-prompt">&gt;</span>
+      <input type="text" id="cmdkInput" class="cmdk-input" placeholder="Jump to a section… try 'projects', 'contact'" autocomplete="off">
+      <kbd class="cmdk-esc">esc</kbd>
+    </div>
+    <ul class="cmdk-list" id="cmdkList"></ul>
+  </div>
+</div>
+
+<!-- ================= NAVIGATION ================= -->
+<nav class="navbar" id="navbar" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="Mouli Dutta home">
+      <span class="logo-bracket">[</span>MD<span class="logo-bracket">]</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" data-nav="about">About</a></li>
+      <li><a href="#skills" data-nav="skills">Skills</a></li>
+      <li><a href="#projects" data-nav="projects">Projects</a></li>
+      <li><a href="#experience" data-nav="experience">Experience</a></li>
+      <li><a href="#certifications" data-nav="certifications">Certs</a></li>
+      <li><a href="#contact" data-nav="contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="cmdk-trigger" id="cmdkTrigger" aria-label="Open command palette">
+        <span>⌘K</span>
+      </button>
+      <a href="#contact" class="btn btn-small btn-primary">Let's talk</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#github">GitHub</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="hero">
+    <canvas class="hero-canvas-3d" id="heroCanvas3D" aria-hidden="true"></canvas>
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero-rays" aria-hidden="true"></div>
+    <div class="depth-orb depth-orb--a" aria-hidden="true"></div>
+    <div class="depth-orb depth-orb--b" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-eyebrow reveal-line"><span class="pulse-dot"></span>Available for new opportunities — Kolkata, WB</p>
+        <h1 class="hero-title">
+          <span class="reveal-line">Mouli Dutta</span>
+        </h1>
+        <p class="hero-role reveal-line">Detection Engineer <span class="hero-sep">/</span> AI Security Engineer</p>
+        <p class="hero-desc reveal-line">Experienced in Google SecOps (Chronicle), specializing in YARA-L detection engineering, Python automation, and AI-driven SOC operations.</p>
+
+        <div class="hero-actions reveal-line">
+          <a href="./assets/Dutta_Mouli_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary magnetic" data-magnetic>
+            <span>Download Résumé</span>
+          </a>
+          <a href="#projects" class="btn btn-ghost magnetic" data-magnetic>
+            <span>View Projects</span>
+          </a>
+        </div>
+
+        <div class="hero-social reveal-line">
+          <a href="https://github.com/mouli-dutta" target="_blank" rel="noopener" class="social-link magnetic" data-magnetic aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/mouli-dutta" target="_blank" rel="noopener" class="social-link magnetic" data-magnetic aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://leetcode.com/u/mouli_dutta/" target="_blank" rel="noopener" class="social-link magnetic" data-magnetic aria-label="LeetCode"><i class="fas fa-code"></i></a>
+          <a href="mailto:mouliduttawork@gmail.com" class="social-link magnetic" data-magnetic aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="hero-console reveal-scale tilt-3d" data-tilt data-tilt-max="10" aria-label="Live detection console demo">
+        <div class="console-frame">
+          <div class="console-bar">
+            <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+            <span class="console-title">chronicle_triage.yaral</span>
+          </div>
+          <div class="console-body" id="consoleBody">
+            <pre id="consoleOutput" class="console-output"></pre>
+            <span class="console-cursor" aria-hidden="true">▌</span>
+          </div>
+        </div>
+        <div class="console-glow" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>scroll</span>
+      <div class="scroll-line"><div class="scroll-dot"></div></div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section about" id="about">
+    <div class="depth-orb depth-orb--c" aria-hidden="true"></div>
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Profile</p>
+        <h2 class="section-title" data-reveal>Turning telemetry into<br>trustworthy signal.</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-copy" data-reveal>
+          <p>I'm a Security Transformation Associate at Accenture with nearly 2 years of experience in Detection Engineering and SOC automation. I work with Google SecOps (Chronicle), developing and optimizing YARA-L detections, building Python automation, and creating dashboards that improve security operations. I'm passionate about applying AI and LLMs to make threat detection smarter, reduce analyst workload, and build scalable security solutions.</p>
+
+          <div class="about-status">
+            <div class="status-item">
+              <span class="status-dot status-dot--live"></span>
+              <div>
+                <p class="status-label">Status</p>
+                <p class="status-value">Open to Detection Engineering & AI Security roles</p>
+              </div>
+            </div>
+            <div class="status-item">
+              <span class="status-dot"></span>
+              <div>
+                <p class="status-label">Based in</p>
+                <p class="status-value">Kolkata, West Bengal, India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-card tilt-3d" data-tilt data-reveal>
+          <div class="stat-grid" id="statGrid">
+            <div class="stat" data-count="80" data-suffix="%">
+              <p class="stat-num"><span class="count">0</span><span class="stat-suffix">%</span></p>
+              <p class="stat-label">False positives reduced</p>
+            </div>
+            <div class="stat" data-count="40" data-suffix="%">
+              <p class="stat-num"><span class="count">0</span><span class="stat-suffix">%</span></p>
+              <p class="stat-label">Manual analyst effort cut</p>
+            </div>
+            <div class="stat" data-count="30" data-suffix="+">
+              <p class="stat-num"><span class="count">0</span><span class="stat-suffix">+</span></p>
+              <p class="stat-label">YARA-L rules shipped</p>
+            </div>
+            <div class="stat" data-count="500" data-suffix="+">
+              <p class="stat-num"><span class="count">0</span><span class="stat-suffix">+</span></p>
+              <p class="stat-label">LeetCode problems solved</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-mini" data-reveal>
+        <div class="timeline-mini-item">
+          <p class="tmi-year">2022 – 2024</p>
+          <p class="tmi-title">Master of Computer Applications — 85.58%</p>
+          <p class="tmi-sub">University of Kalyani, West Bengal</p>
+        </div>
+        <div class="timeline-mini-divider" aria-hidden="true"></div>
+        <div class="timeline-mini-item">
+          <p class="tmi-year">Oct 2024 – Present</p>
+          <p class="tmi-title">Security Transformation Associate — Accenture</p>
+          <p class="tmi-sub">Detection engineering on Google SecOps (Chronicle)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section class="section skills" id="skills">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Capabilities</p>
+        <h2 class="section-title" data-reveal>Tagged &amp; categorized,<br>like the alerts I triage.</h2>
+      </div>
+
+      <div class="filter-row" id="filterRow" data-reveal>
+        <button class="filter-chip is-active" data-filter="all">All</button>
+        <button class="filter-chip" data-filter="detection">Security Operations</button>
+        <button class="filter-chip" data-filter="ai">AI / ML</button>
+        <button class="filter-chip" data-filter="python">Programming</button>
+        <button class="filter-chip" data-filter="cloud">Cloud & Tools</button>
+      </div>
+
+      <div class="skill-cloud" id="skillCloud" data-reveal>
+        <!-- populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="section projects" id="projects">
+    <div class="depth-orb depth-orb--d" aria-hidden="true"></div>
+    <div class="section-inner">
+      <div class="section-head section-head--split">
+        <div>
+          <p class="eyebrow" data-reveal>Selected work</p>
+          <h2 class="section-title" data-reveal>Projects that shipped,<br>not just shelved.</h2>
+        </div>
+        <div class="project-search" data-reveal>
+          <input type="text" id="projectSearch" placeholder="Search projects…" aria-label="Search projects">
+        </div>
+      </div>
+
+      <div class="filter-row" id="projectFilterRow" data-reveal>
+        <button class="filter-chip is-active" data-pfilter="all">All</button>
+        <button class="filter-chip" data-pfilter="security">Security & AI</button>
+        <button class="filter-chip" data-pfilter="automation">Automation</button>
+        <button class="filter-chip" data-pfilter="dev">Dev Tools</button>
+      </div>
+
+      <div class="project-grid" id="projectGrid">
+        <!-- populated by JS -->
+      </div>
+      <div class="load-more-row">
+        <button class="btn btn-ghost btn-small" id="projectsLoadMore" hidden>Load more projects</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECT MODAL ================= -->
+  <div class="modal" id="projectModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-panel tilt-3d" data-tilt data-tilt-max="3" role="dialog" aria-modal="true" aria-label="Details">
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <span></span><span></span>
+      </button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section class="section experience" id="experience">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Track record</p>
+        <h2 class="section-title" data-reveal>Experience log.</h2>
+      </div>
+
+      <div class="v-timeline" id="vTimeline">
+        <div class="v-line" aria-hidden="true"><div class="v-line-fill" id="vLineFill"></div></div>
+
+        <div class="v-item" data-reveal>
+          <div class="v-node"></div>
+          <div class="v-card tilt-3d" data-tilt data-tilt-max="5">
+            <p class="v-duration">Oct 2024 — Present</p>
+            <h3 class="v-role">Security Transformation Associate</h3>
+            <p class="v-company">Accenture</p>
+            <ul class="v-points">
+              <li> Optimized 30+ production YARA-L detection rules in Google Chronicle SIEM, reducing false positives by 80% while improving MITRE ATT&CK coverage across endpoints.</li>
+              <li>Designed Python-based automation workflows using REST APIs for alert enrichment and SOC triage, cutting manual analyst effort by 40% and Mean Time to Resolution (MTTR) by 25%.</li>
+              <li> Built interactive dashboards in Google SecOps using YARA-L and automated reporting pipelines to track alert trends, detection KPIs, threat-hunting coverage, and SOC metrics for weekly/monthly leadership reviews.</li> 
+              <li> Collaborated with stakeholders to prioritize detection gaps and translate incident-response findings into new or tuned detection logic.</li>
+              </ul>
+            <div class="v-badge">Leadership Recognition, Accenture (2025)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CERTIFICATIONS ================= -->
+  <section class="section certifications" id="certifications">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Credentials</p>
+        <h2 class="section-title" data-reveal>Courses & Certifications.</h2>
+      </div>
+
+      <div class="filter-row" id="certFilterRow" data-reveal>
+        <!-- populated by JS from actual issuer data, so it never drifts out of sync -->
+      </div>
+
+      <div class="cert-grid" id="certGrid">
+        <!-- populated by JS -->
+      </div>
+      <div class="load-more-row">
+        <button class="btn btn-ghost btn-small" id="certsLoadMore" hidden>Load more certifications</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GITHUB ================= -->
+  <section class="section github" id="github">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Open source</p>
+        <h2 class="section-title" data-reveal>github.com/mouli-dutta</h2>
+      </div>
+
+      <div class="github-grid">
+        <div class="repo-list" id="repoList" data-reveal><!-- populated by JS --></div>
+
+        <div class="heatmap-card" data-reveal>
+          <canvas id="heatmapCanvas" class="heatmap-canvas" width="720" height="120" aria-label="Contribution heatmap"></canvas>
+          <p>"We can only see a short distance ahead, but we can see plenty there that needs to be done."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section contact" id="contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-copy" data-reveal>
+          <p class="eyebrow">Get in touch</p>
+          <h2 class="section-title">Have a detection<br>problem worth solving?</h2>
+          <p class="contact-desc">Open to Detection Engineering, AI Security, and SOC automation roles. I usually reply within a day.</p>
+
+          <div class="contact-list">
+            <a href="mailto:mouliduttawork@gmail.com" class="contact-row magnetic" data-magnetic>
+              <span class="contact-label">Email</span>
+              <span class="contact-value">mouliduttawork@gmail.com</span>
+            </a>
+            
+            <a href="https://linkedin.com/in/mouli-dutta" target="_blank" rel="noopener" class="contact-row magnetic" data-magnetic>
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value">linkedin.com/in/mouli-dutta</span>
+            </a>
+            <a href="https://github.com/mouli-dutta" target="_blank" rel="noopener" class="contact-row magnetic" data-magnetic>
+              <span class="contact-label">GitHub</span>
+              <span class="contact-value">github.com/mouli-dutta</span>
+            </a>
+            <a href="https://leetcode.com/u/mouli_dutta" target="_blank" rel="noopener" class="contact-row magnetic" data-magnetic>
+              <span class="contact-label">LeetCode</span>
+              <span class="contact-value">leetcode.com/u/mouli_dutta</span>
+            </a>
+          </div>
+
+          <div class="availability-badge">
+            <span class="pulse-dot"></span> Available for new opportunities
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" data-reveal novalidate>
+          <div class="form-field">
+            <input type="text" id="fName" name="name" required placeholder=" ">
+            <label for="fName">Your name</label>
+            <span class="form-error" id="err-fName"></span>
+          </div>
+          <div class="form-field">
+            <input type="email" id="fEmail" name="email" required placeholder=" ">
+            <label for="fEmail">Your email</label>
+            <span class="form-error" id="err-fEmail"></span>
+          </div>
+          <div class="form-field">
+            <input type="text" id="fSubject" name="subject" required placeholder=" ">
+            <label for="fSubject">Subject</label>
+            <span class="form-error" id="err-fSubject"></span>
+          </div>
+          <div class="form-field">
+            <textarea id="fMessage" name="message" rows="4" required placeholder=" "></textarea>
+            <label for="fMessage">Message</label>
+            <span class="form-error" id="err-fMessage"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit magnetic" data-magnetic>
+            <span class="btn-submit-text">Send message</span>
+            <span class="btn-submit-loader" aria-hidden="true"></span>
+          </button>
+          <p class="form-success" id="formSuccess" role="status">Message sent — thanks! I'll get back to you soon.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="#hero" class="footer-logo">[MD]</a>
+    <div class="footer-divider" aria-hidden="true"></div>
+    <div class="footer-social">
+      <a href="https://github.com/mouli-dutta" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/mouli-dutta" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://leetcode.com/u/mouli_dutta" target="_blank" rel="noopener">LeetCode</a>
+      <a href="mailto:mouliduttawork@gmail.com">Email</a>
+    </div>
+    <p class="footer-meta">© <span id="footerYear"></span> Mouli Dutta. Built with HTML, CSS &amp; JS.</p>
+  </div>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+</footer>
+
+<div class="toast" id="konamiToast"><span>🛰️ Developer mode unlocked. Detections armed.</span></div>
+
+<script src="js/utils.js" defer></script>
+<script src="js/particles.js" defer></script>
+<script src="js/cursor.js" defer></script>
+<script src="js/animations.js" defer></script>
+<script src="js/script.js" defer></script>
+<script src="js/vendor/three.min.js" defer fetchpriority="low"></script>
+<script src="js/hero3d.js" defer fetchpriority="low"></script>
+<script src="js/tilt3d.js" defer></script>
+</body>
+</html>

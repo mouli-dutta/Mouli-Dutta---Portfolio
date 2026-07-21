@@ -1,0 +1,39 @@
+/* ==========================================================================
+   ANIMATIONS — scroll reveals, entrance sequences, ambient motion
+   ========================================================================== */
+
+/* -- generic reveal-on-scroll -- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
+}
+[data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+
+.reveal-scale { opacity: 0; transform: scale(.94) translateY(20px); transition: opacity .9s var(--ease) .15s, transform .9s var(--ease) .15s; }
+.reveal-scale.is-visible { opacity: 1; transform: scale(1) translateY(0); }
+
+/* -- hero text lines: staggered entrance on load -- */
+.reveal-line { opacity: 0; transform: translateY(24px); animation: lineIn .8s var(--ease) forwards; }
+.hero-eyebrow.reveal-line { animation-delay: .15s; }
+.hero-title .reveal-line { animation-delay: .28s; }
+.hero-role.reveal-line { animation-delay: .42s; }
+.hero-desc.reveal-line { animation-delay: .56s; }
+.hero-actions.reveal-line { animation-delay: .7s; }
+.hero-social.reveal-line { animation-delay: .84s; }
+@keyframes lineIn { to { opacity: 1; transform: translateY(0); } }
+
+/* -- staggered children (skills / projects / certs) -- */
+.stagger-in > * { opacity: 0; transform: translateY(20px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.stagger-in.is-visible > * { opacity: 1; transform: translateY(0); }
+
+/* -- ambient background float -- */
+@keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+
+/* -- project card mask reveal image placeholder (used generically) -- */
+.mask-reveal { clip-path: inset(100% 0 0 0); transition: clip-path .9s var(--ease); }
+.mask-reveal.is-visible { clip-path: inset(0 0 0 0); }
+
+/* -- number counter pop -- */
+.stat.is-visible .stat-num { animation: statPop .5s var(--ease); }
+@keyframes statPop { 0% { transform: scale(.9); } 60% { transform: scale(1.04); } 100% { transform: scale(1); } }
